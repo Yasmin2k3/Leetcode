@@ -1,21 +1,18 @@
 class Solution(object):
     def summaryRanges(self, nums):
-        to = "->"
-        # temp = str(nums[0])
+        result, n = [], len(nums)
+        a = nums[0]
 
-        # loop through numbers in nums
+        if n == 0:
+            return result
 
-        # if nums[1] != nums[0]:
-        # nums[0] if nums[0] == nums[1]
-        # always add nums at start.
+        for i in range(n):
+            if (i == n-1) or (nums[i]+1 != nums[i+1]):
+                if nums[i] != a:
+                    result.append(str(a) + "->" + str(nums[i]))
+                else:
+                    result.append(str(a))
 
-        for i in nums:
-            print(i)
-        """
-        :type nums: List[int]
-        :rtype: List[str]
-        """
-
-
-testList = [0, 1, 2, 4, 5, 6, 7, 9]
-Solution.summaryRanges(Solution, testList)
+                if i != n-1:
+                    a = nums[i+1]
+        return result
