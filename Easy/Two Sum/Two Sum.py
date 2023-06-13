@@ -1,6 +1,6 @@
 class Solution(object):
-    nums = [2, 7, 11, 15]
-    target = 22
+    nums = [2, 2, 2]
+    target = 4
 
     def twoSum(nums, target):
         finalSum = 0
@@ -14,13 +14,13 @@ class Solution(object):
                     finalSum += nums[a]
                     break
 
-            for checker in nums:
-                if checker == finalSum:
+            for checker in range(len(nums)):
+                if checker == a:
                     pass
-                elif checker == target:
+                elif nums[checker] == target:
                     return "This number does not work"
-                elif checker + finalSum == target:
-                    finalSum += checker
+                elif nums[checker] + finalSum == target:
+                    finalSum += nums[checker]
                     break
 
             if finalSum == target:
@@ -33,4 +33,4 @@ class Solution(object):
         return finalSum
 
 
-    print(twoSum(nums, target))
+    twoSum(nums, target)
