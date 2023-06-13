@@ -1,21 +1,36 @@
 class Solution(object):
     nums = [2, 7, 11, 15]
-    target = 9
+    target = 22
 
     def twoSum(nums, target):
-        # target = 9 for now; check if the first index is less than nine, check if second
-        # index added with first index is greater or less than nine, repeat for all indexes.
-        # If that doesnt work, then check if second index is less than nine and continue.
-
         finalSum = 0
 
-        for i in range(0, len(nums)):
-            checker = nums[i]
-            if checker == target:
-                return 'This number does not work'
-            else:
-                if checker < target:
+        for i in range(len(nums)):
+
+            for a in range(i, len(nums)):
+                if nums[a] == target:
+                    return "This number does not work"
+                elif nums[a] < target:
+                    finalSum += nums[a]
+                    break
+
+            for checker in nums:
+                if checker == finalSum:
+                    pass
+                elif checker == target:
+                    return "This number does not work"
+                elif checker + finalSum == target:
                     finalSum += checker
                     break
 
-    twoSum(nums, target)
+            if finalSum == target:
+                break
+            elif nums[i] != nums[-1]:
+                finalSum = 0
+            else:
+                return "This number does not work"
+
+        return finalSum
+
+
+    print(twoSum(nums, target))
