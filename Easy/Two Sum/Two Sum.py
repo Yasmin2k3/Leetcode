@@ -1,8 +1,8 @@
 class Solution(object):
-    nums = [2, 2, 2]
-    target = 4
+    nums = [3,3]
+    target = 6
 
-    def twoSum(nums, target):
+    def twoSum(self, nums, target):
         finalSum = 0
 
         for i in range(len(nums)):
@@ -31,6 +31,3 @@ class Solution(object):
                 return "This number does not work"
 
         return finalSum
-
-
-    twoSum(nums, target)
