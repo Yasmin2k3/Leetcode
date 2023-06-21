@@ -14,6 +14,3 @@ class Solution(object):
             outPut += strs[0][i]
 
         return outPut
-
-    strs = ["ab", "abacus", "abc"]
-    print(longestCommonPrefix(0, strs))
