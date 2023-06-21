@@ -4,8 +4,11 @@ Input: strs = ["flower","flow","flight"]
 Output: "fl"."""
 
 class Solution(object):
-    def longestCommonPrefix(self, strs: [str]) -> str:
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
+    def longestCommonPrefix(self, strs):
+        outPut = ""
+
+        for i in range(len(strs[0])):
+            for a in strs:
+                if i == len(a) or a[i] != strs[0][i]:
+                    return outPut
+            outPut += strs[0][i]
