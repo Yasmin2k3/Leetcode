@@ -4,7 +4,7 @@ Input: strs = ["flower","flow","flight"]
 Output: "fl"."""
 
 class Solution(object):
-    def longestCommonPrefix(self, strs):
+    def longestCommonPrefix(self, strs: [str]) -> str:
         outPut = ""
 
         for i in range(len(strs[0])):
@@ -12,3 +12,8 @@ class Solution(object):
                 if i == len(a) or a[i] != strs[0][i]:
                     return outPut
             outPut += strs[0][i]
+
+        return outPut
+
+    strs = ["ab", "abacus", "abc"]
+    print(longestCommonPrefix(0, strs))
